@@ -1,0 +1,40 @@
+---
+import { Image } from "astro:assets";
+import structimg from "../../images/ptrn-girders.jpeg";
+---
+
+<div class="flex flex-col md:flex-row md:justify-center">
+  <!-- <div class="flex flex-col md:flex-row md:justify-start"> -->
+  <div class="md:max-w-lg relative">
+    <h1
+      class="md:rounded-l-2xl absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center text-5xl font-bold text-white bg-primary-900/30"
+    >
+      Engineering
+    </h1>
+    <Image
+      class="md:rounded-l-2xl md:min-h-[350px] max-h-52 overflow-hidden object-cover"
+      src={structimg}
+      width={800}
+      alt="structures"
+    />
+  </div>
+  <div
+    class="bg-primary-800 text-white md:w-[400px] max-w-md min-w-[250px] p-6 pl-8 inline-block md:rounded-r-2xl"
+  >
+    <ul class="list-disc pt-4">
+      <li class="font-bold">Design of buildings, bridges, and tunnels</li>
+      <li class="font-bold">Design of sustainable structures</li>
+      <li class="font-bold">Design of reinforced concrete, steel, timber, masonry, and compositestructures</li>
+      <li class="font-bold">Design of prestressed and post-tensioned concrete structures</li>
+      <li class="font-bold">Seismic design of structures</li>
+      <li class="font-bold">Blast resistant design</li>
+      <li class="font-bold">Inspection and assessment of structures</li>
+      <li class="font-bold">Strengthening of existing structures</li>
+      <li class="font-bold">Design of temporary works</li>
+    </ul>
+  </div>
+</div>
+
+<!-- <li class="font-bold">Design of foundations</li>
+  <li class="font-bold">Design of steel connections</li>
+  <li class="font-bold">Modern methods of construction</li> -->

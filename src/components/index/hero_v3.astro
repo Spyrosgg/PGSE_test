@@ -1,0 +1,88 @@
+---
+import { Image } from "astro:assets";
+// import bridge from "../../images/bridge-full2.png";
+import bridge from "../../images/bridge.png";
+import rectangeCircle from "../../images/RectangleCircle.png";
+import EDA from "../../images/eda-diff.png";
+import EDAmba from "../../images/eda-mba.png";
+import houses from "../../images/residential_hero.jpeg";
+import Btn from "../ui/btn.astro";
+---
+
+<section class="h-[100vh + 100px]">
+  <div class="flex flex-col items-center pt-16">
+    <h1
+      class="px-2 text-center text-4xl font-bold tracking-tight text-primary-800 sm:text-5xl md:text-6xl lg:w-2/3"
+    >
+      Engineering a <br /> Better Future, <span class="text-secondary-600"
+        >Together</span
+      >
+    </h1>
+
+    {/*Triangle */}
+    <div
+      class="absolute -top-[450px] left-0 -z-50 h-0 w-0 border-b-[80vh] border-l-[100vw] border-t-[500px] border-b-transparent border-l-primary-500 border-t-transparent opacity-10"
+    >
+    </div>
+
+    <div class="flex w-2/3 flex-col items-center pt-4">
+      <p class="text-center text-primary-800 sm:text-lg">
+        We are an energetic team of design-oriented chartered structural
+        engineers
+      </p>
+
+      <div class="mt-8">
+        <button class="relative">
+          <a
+            class="relative rounded-full bg-primary-50 px-4 py-3 text-sm font-semibold text-primary-900 border-2 border-primary-300 hover:bg-secondary-600 hover:border-0 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600"
+            href="/contact"
+          >
+            Get a quick inquiry</a
+          >
+        </button>
+        <!-- <Btn text="Get a quick inquiry" link="/contact"/> -->
+      </div>
+    </div>
+
+    <div
+      class="relative flex flex-col-reverse gap-6 sm:flex-row items-center px-6 pt-8"
+    >
+      <div class="grid grid-cols-2 gap-8 text-primary-800">
+        <section class="max-w-[250px]">
+          <h3 class="font-semibold">Story</h3>
+          <p>
+            We are an energetic team of design-oriented chartered structural
+            engineers
+          </p>
+        </section>
+        <section class="max-w-[250px]">
+          <h3 class="font-semibold">Mission</h3>
+          <p>
+            We are an energetic team of design-oriented chartered structural
+            engineers
+          </p>
+        </section>
+        <section class="max-w-[250px]">
+          <h3 class="font-semibold">Vision</h3>
+          <p>
+            We are an energetic team of design-oriented chartered structural
+            engineers
+          </p>
+        </section>
+        <section class="max-w-[250px]">
+          <h3 class="font-semibold">Expertise</h3>
+          <p>
+            We are an energetic team of design-oriented chartered structural
+            engineers
+          </p>
+        </section>
+      </div>
+      <Image
+        class="relative h-[350px] object-cover"
+        src={rectangeCircle}
+        alt="hero image"
+        width={800}
+      />
+    </div>
+  </div>
+</section>
