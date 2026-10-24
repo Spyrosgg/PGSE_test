@@ -1,0 +1,69 @@
+---
+import { SEO } from "astro-seo";
+import { ClientRouter } from "astro:transitions";
+import GoogleAnalytics from "../components/googleAnalytics.astro";
+const title = "PGSE | Structural Engineers";
+const { description } = Astro.props;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
+const resolvedImageWithDomain = new URL(
+  "/opengraph.jpg",
+  Astro.site,
+).toString();
+---
+
+<head>
+  <!-- Google tag (gtag.js) -->
+  <GoogleAnalytics />
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width" />
+  <link rel="sitemap" href="/sitemap-0.xml" />
+  <link rel="shortcut icon" href="#" />
+  <meta name="generator" content={Astro.generator} />
+
+  {/*Favicon */}
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="icon" href="/favicon.svg?" type="image/svg+xml" />
+
+  {/*Fonts */}
+  <!-- <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600;700;800&display=swap"
+    rel="stylesheet"
+  /> -->
+
+  <SEO
+    title={title}
+    description={description}
+    canonical={canonicalURL}
+    openGraph={{
+      basic: {
+        url: canonicalURL,
+        type: "website",
+        title: title,
+        image: resolvedImageWithDomain,
+      },
+      optional: {
+        description: description,
+      },
+      image: {
+        width: 1200,
+        height: 630,
+        alt: "PGSE Screenshot",
+      },
+    }}
+    twitter={{
+      title: title,
+      card: "summary_large_image",
+      description: description,
+    }}
+  />
+
+  <ClientRouter />
+</head>

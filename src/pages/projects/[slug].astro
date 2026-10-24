@@ -1,0 +1,106 @@
+---
+import Layout from "../../Layout/BaseLayout.astro";
+import Container from "../../components/container.astro";
+import { Icon } from "astro-icon/components";
+import { SITE_TITLE_HEADER } from "../../consts";
+import { Image } from "astro:assets";
+import Btn from "../../components/ui/btn.astro";
+import Spacer from "../../components/ui/spacer.astro";
+
+import { getCollection, render } from "astro:content";
+const projectPosts = await getCollection("projects", ({ data }) => {
+  return !data.draft;
+});
+
+// 1. Generate a new path for every collection entry
+export async function getStaticPaths() {
+  const projectsEntries = await getCollection("projects");
+  return projectsEntries.map((entry) => ({
+    params: { slug: entry.id },
+    props: { entry },
+  }));
+}
+// 2. When it's time to render, you can get the entry directly from the prop
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+
+---
+
+<Layout title="Projects">
+  <main>
+  <Container>
+    <!-- transition:persist -->
+    <!-- sidebar list -->
+      <aside
+        class="hidden lg:block fixed z-20 inset-0 top-[8rem] left-[max(0px,calc(50%-45rem))] right-auto w-[14rem] xl:w-[20rem] pb-10 pl-8 pr-6 overflow-y-auto "
+      >
+        <h3 class="px-3 font-semibold">Project list</h3>
+        <ul>
+          {
+            projectPosts.map((project, index) => (
+              <li class="px-3 py-1  hover:delay-00 hover:bg-primary-500/20">
+                <a href={`/projects/${project.id}`}>
+                  <p class:list={["text-sm whitespace-nowrap text-ellipsis overflow-hidden",
+                  entry.data.title==project.data.title?"font-semibold":""
+                ]} >{project.data.title}</p>
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </aside>
+      <!-- Generates each entry -->
+      <div
+        transition:animate="slide"
+        class="isolate flex flex-col justify-center lg:pl-19.5rem"
+      >
+        <div class="mx-auto max-w-2xl">
+          <Image
+            src={entry.data.cover}
+            alt={entry.data.coverAlt}
+            width={800}
+            class="w-full rounded-md md:rounded-xl"
+          />
+          <div
+            class="mt-12 text-sm font-medium uppercase tracking-wider text-secondary-600"
+          >
+            {entry.data.category}
+          </div>
+          <h2 class="text-2xl">{entry.data.title}</h2>
+          <h1 class="mt-2 text-xl">{entry.data.description}</h1>
+          <div class="mt-3 flex flex-wrap items-center gap-2 md:flex-nowrap">
+            <span class="text-primary-500">
+              {entry.data.client}
+            </span>
+            <span class="text-primary-500">•</span>
+            <span class="text-primary-500">
+              {entry.data.member}
+            </span>
+            <span class="text-primary-400 hidden md:block">•</span>
+            <div class="flex w-full flex-wrap gap-3 md:w-auto">
+              {
+                entry.data.tags.map((tag) => (
+                  <span class="text-primary-500 text-sm">#{tag}</span>
+                ))
+              }
+            </div>
+          </div>
+          <article class="prose mx-auto mt-6">
+            <Content />
+          </article>
+
+          <!-- return btn  -->
+          <div class="mt-12 flex justify-center">
+            <Btn text="← Back to Projects" link="/experience#projects" />
+            <!-- <a
+            href="/experience"
+            class="bg-primary-100 hover:bg-primary-200 rounded-md px-5 py-3 transition"
+            >← Back to Projects</a
+          > -->
+          </div>
+        </div>
+      </div>
+      <Spacer />
+    </Container>
+  </main>
+</Layout>

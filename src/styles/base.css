@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind utilities;
+@tailwind components;
+
+@layer components {
+  .bg-grid-light {
+    /* opacity: 0.3; */
+    /* transform: rotate(45deg); */
+    background-size: 1.5rem 1.5rem;
+    background-image: linear-gradient(to right, #f4f4f5 1px, transparent 1px),
+      linear-gradient(to bottom, #f4f4f5 1px, transparent 1px);
+  }
+  .bg-grid-dark {
+    /* opacity: 0.3; */
+    background-size: 1.5rem 1.5rem;
+    background-image: linear-gradient(to right, #27272a 1px, transparent 1px),
+      linear-gradient(to bottom, #27272a 1px, transparent 1px);
+  }
+}
+
+@font-face {
+  font-family: "InterL";
+  src: url("/fonts/Inter.var.woff2")  format('woff2');
+  font-display: swap;
+}
+@font-face {
+  font-family: "PoppinsL";
+  src: url("/fonts/poppins-bold.woff2")  format('woff2');
+  font-display: swap;
+}

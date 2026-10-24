@@ -1,0 +1,197 @@
+---
+import { Icon } from "astro-icon/components";
+import { Image } from 'astro:assets';
+import escalator from "../images/eliz-line.jpeg";
+
+import {  SITE_TITLE_HEADER, EMAIL, TEL_GR, TEL_UK } from "../consts";
+import Layout from "../Layout/BaseLayout.astro";
+import Container from "../components/container.astro";
+---
+
+<Layout title="Contact us">
+  <Container>
+    <div class="isolate bg-white px-6 py-0 sm:pt-0 lg:px-8">
+      <div class="mx-auto max-w-2xl">
+        <h2
+          class="text-3xl font-bold tracking-tight text-primary-900 sm:text-4xl">
+          Contact
+        </h2>
+        <p class="mt-2 text-primary-600">
+          We appreciate your interest in {SITE_TITLE_HEADER}, and we look forward to
+          discussing your project needs. Whether you have questions, need a
+          consultation, or want to collaborate with us on your next venture, we
+          are here to assist you. Contact us using the information provided
+          below or fill out the contact form, and we'll get back to you
+          promptly.
+        </p>
+      </div>
+      <div
+        class="m-auto mt-12 grid max-w-2xl items-center justify-center gap-4 overflow-hidden md:grid-cols-2">
+        <div class="bg-secondary-600 p-6 text-xl font-semibold text-white">
+          <div class="TEL flex gap-4">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="h-6 w-6 text-white">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M14.25 9.75v-4.5m0 4.5h4.5m-4.5 0l6-6m-3 18c-8.284 0-15-6.716-15-15V4.5A2.25 2.25 0 014.5 2.25h1.372c.516 0 .966.351 1.091.852l1.106 4.423c.11.44-.054.902-.417 1.173l-1.293.97a1.062 1.062 0 00-.38 1.21 12.035 12.035 0 007.143 7.143c.441.162.928-.004 1.21-.38l.97-1.293a1.125 1.125 0 011.173-.417l4.423 1.106c.5.125.852.575.852 1.091V19.5a2.25 2.25 0 01-2.25 2.25h-2.25z"
+              ></path>
+            </svg>
+            <a href=`tel:+44${TEL_UK}`>UK: +44 {TEL_UK}</a>
+          </div>
+          <div class="TEL mt-6 flex gap-4">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="h-6 w-6 text-white">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M14.25 9.75v-4.5m0 4.5h4.5m-4.5 0l6-6m-3 18c-8.284 0-15-6.716-15-15V4.5A2.25 2.25 0 014.5 2.25h1.372c.516 0 .966.351 1.091.852l1.106 4.423c.11.44-.054.902-.417 1.173l-1.293.97a1.062 1.062 0 00-.38 1.21 12.035 12.035 0 007.143 7.143c.441.162.928-.004 1.21-.38l.97-1.293a1.125 1.125 0 011.173-.417l4.423 1.106c.5.125.852.575.852 1.091V19.5a2.25 2.25 0 01-2.25 2.25h-2.25z"
+              ></path>
+            </svg>
+            <a href=`tel:+30${TEL_GR}`>GR: +30 {TEL_GR}</a>
+          </div>
+          <div class="EMAIL mt-6 flex gap-4">
+            <div class="">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="h-6 w-6 text-white">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"
+                ></path>
+              </svg>
+            </div>
+            <a href=`mailto:info@pgse.co.uk`>infog@{EMAIL}</a>
+            <!-- <a href=`mailto:info@${EMAIL}`>infog@{EMAIL}</a> -->
+          </div>
+        </div>
+        <div class="flex justify-center overflow-hidden rounded-lg">
+          <Image
+            class="-z-10 max-w-sm"
+            src={escalator}
+            sizes="(max-width: 800px) 100vw, 800px"
+            alt="Escalator"
+          />
+        </div>
+      </div>
+      <div class="mx-auto mt-24 max-w-xl">
+        <h2
+          class="text-2xl font-bold tracking-tight text-primary-900 sm:text-3xl">
+          Get in touch
+        </h2>
+        <p class="mx-auto mt-2 text-primary-600">
+          Please fill out the contact form below with your name, email address,
+          and a brief description of your project or inquiry. This will help us
+          better understand your needs and ensure that the right team member
+          reaches out to you promptly.
+        </p>
+      </div>
+      <form action="#" method="POST" class="mx-auto mt-6 max-w-xl sm:mt-12">
+        <div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
+          <div>
+            <label
+              for="first-name"
+              class="block text-sm font-semibold leading-6 text-primary-900"
+              >First name</label
+            >
+            <div class="mt-2.5">
+              <input
+                type="text"
+                name="first-name"
+                id="first-name"
+                autocomplete="given-name"
+                class="block w-full rounded-md border-0 bg-primary-100 px-3.5 py-2 text-primary-900 shadow-sm ring-1 ring-inset ring-primary-300 placeholder:text-primary-400 focus:ring-1 focus:ring-inset focus:ring-primary-600 sm:text-sm sm:leading-6"
+              />
+            </div>
+          </div>
+          <div>
+            <label
+              for="last-name"
+              class="block text-sm font-semibold leading-6 text-primary-900"
+              >Last name</label
+            >
+            <div class="mt-2.5">
+              <input
+                type="text"
+                name="last-name"
+                id="last-name"
+                autocomplete="family-name"
+                class="block w-full rounded-md border-0 bg-primary-100 px-3.5 py-2 text-primary-900 shadow-sm ring-1 ring-inset ring-primary-300 placeholder:text-primary-400 focus:ring-1 focus:ring-inset focus:ring-primary-600 sm:text-sm sm:leading-6"
+              />
+            </div>
+          </div>
+          <div class="sm:col-span-2">
+            <label
+              for="company"
+              class="block text-sm font-semibold leading-6 text-primary-900"
+              >Company</label
+            >
+            <div class="mt-2.5">
+              <input
+                type="text"
+                name="company"
+                id="company"
+                autocomplete="organization"
+                class="block w-full rounded-md border-0 bg-primary-100 px-3.5 py-2 text-primary-900 shadow-sm ring-1 ring-inset ring-primary-300 placeholder:text-primary-400 focus:ring-1 focus:ring-inset focus:ring-primary-600 sm:text-sm sm:leading-6"
+              />
+            </div>
+          </div>
+          <div class="sm:col-span-2">
+            <label
+              for="email"
+              class="block text-sm font-semibold leading-6 text-primary-900"
+              >Email</label
+            >
+            <div class="mt-2.5">
+              <input
+                type="email"
+                name="email"
+                id="email"
+                autocomplete="email"
+                class="block w-full rounded-md border-0 bg-primary-100 px-3.5 py-2 text-primary-900 shadow-sm ring-1 ring-inset ring-primary-300 placeholder:text-primary-400 focus:ring-1 focus:ring-inset focus:ring-primary-600 sm:text-sm sm:leading-6"
+              />
+            </div>
+          </div>
+          <div class="sm:col-span-2"></div>
+          <div class="sm:col-span-2">
+            <label
+              for="message"
+              class="block text-sm font-semibold leading-6 text-primary-900"
+              >Message</label
+            >
+            <div class="mt-2.5">
+              <textarea
+                name="message"
+                id="message"
+                rows="4"
+                class="block w-full rounded-md border-0 bg-primary-100 px-3.5 py-2 text-primary-900 shadow-sm ring-1 ring-inset ring-primary-300 placeholder:text-primary-400 focus:ring-1 focus:ring-inset focus:ring-primary-600 sm:text-sm sm:leading-6"
+              ></textarea>
+            </div>
+          </div>
+        </div>
+        <div class="mt-10">
+          <button
+            type="submit"
+            class="block w-full rounded-md bg-primary-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-primary-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600"
+            >SUBMIT</button
+          >
+        </div>
+      </form>
+    </div>
+  </Container>
+</Layout>
