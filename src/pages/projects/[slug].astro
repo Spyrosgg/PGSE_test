@@ -1,4 +1,5 @@
 ---
+import { withBase } from "../../lib/url.js";
 import Layout from "../../Layout/BaseLayout.astro";
 import Container from "../../components/container.astro";
 import { Icon } from "astro-icon/components";
@@ -39,7 +40,7 @@ const { Content } = await render(entry);
           {
             projectPosts.map((project, index) => (
               <li class="px-3 py-1  hover:delay-00 hover:bg-primary-500/20">
-                <a href={`/projects/${project.id}`}>
+                <a href={withBase(`/projects/${project.id}`)}>
                   <p class:list={["text-sm whitespace-nowrap text-ellipsis overflow-hidden",
                   entry.data.title==project.data.title?"font-semibold":""
                 ]} >{project.data.title}</p>
@@ -91,9 +92,9 @@ const { Content } = await render(entry);
 
           <!-- return btn  -->
           <div class="mt-12 flex justify-center">
-            <Btn text="← Back to Projects" link="/experience#projects" />
+            <Btn text="← Back to Projects" link={withBase("/experience#projects")} />
             <!-- <a
-            href="/experience"
+            href={withBase("/experience")}
             class="bg-primary-100 hover:bg-primary-200 rounded-md px-5 py-3 transition"
             >← Back to Projects</a
           > -->

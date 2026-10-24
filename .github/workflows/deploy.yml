@@ -23,11 +23,18 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v7
+      - name: Detect Pages URL
+        id: pages
+        uses: actions/configure-pages@v6
       - name: Install, build, and upload site
         uses: withastro/action@v6
         with:
           # Astro 7 needs Node 22.23.4 or newer
           node-version: 24
+        env:
+          # "" with a custom domain, "/<repo>" on <user>.github.io/<repo>
+          BASE_PATH: ${{ steps.pages.outputs.base_path }}
+          SITE_ORIGIN: ${{ steps.pages.outputs.origin }}
 
   deploy:
     needs: build

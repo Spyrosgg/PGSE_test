@@ -1,4 +1,5 @@
 ---
+import { withBase } from "../../lib/url.js";
 import { Image } from "astro:assets";
 import { Icon } from "astro-icon/components";
 import { SITE_TITLE_HEADER } from "../../consts";
@@ -6,12 +7,12 @@ import logo1 from "../../../public/PGSE_v2.jpg";
 
 /** Main menu items */
 const navItems = [
-  { title: "Why PGSE", url: "/about/" },
-  /*   { title: "Why PGSE", url: "/why_pgse/" }, */
-  /*   { title: "About us", url: "/about/" }, */
-  { title: "Services", url: "/services/" },
-  { title: "Experience", url: "/experience/" },
-  { title: "Contact", url: "/contact/" },
+  { title: "Why PGSE", url: withBase("/about/") },
+  /*   { title: "Why PGSE", url: withBase("/why_pgse/") }, */
+  /*   { title: "About us", url: withBase("/about/") }, */
+  { title: "Services", url: withBase("/services/") },
+  { title: "Experience", url: withBase("/experience/") },
+  { title: "Contact", url: withBase("/contact/") },
 ];
 ---
 
@@ -43,7 +44,7 @@ const navItems = [
     </div>
 
     <!-- Logo -->
-    <a href="/" class="-m-1.5 p-1.5">
+    <a href={withBase("/")} class="-m-1.5 p-1.5">
       {/*LOGO */}
       <span class="sr-only">{SITE_TITLE_HEADER}</span>
       <!-- <Image
@@ -144,7 +145,7 @@ const navItems = [
             <li
               class="block px-4 py-2 font-semibold text-primary-800 border-b border-primary-500/50"
             >
-              <a href="/" class="-m-3">Home</a>
+              <a href={withBase("/")} class="-m-3">Home</a>
             </li>
             {
               navItems.map(({ title, url }) => (

@@ -1,4 +1,5 @@
 ---
+import { withBase } from "../lib/url.js";
 import { Icon } from "astro-icon/components";
 import { Image } from 'astro:assets';
 import {  SITE_TITLE_HEADER } from "../consts";
@@ -20,10 +21,10 @@ import Btn from "../components/ui/btn.astro"
       </p>
       <SpacerHalf/>
       <!-- return btn  -->
-      <Btn text="← Back to Home" link="/" />
+      <Btn text="← Back to Home" link={withBase("/")} />
       <!-- <div class="text-center">
         <a
-          href="/"
+          href={withBase("/")}
           class="bg-primary-100 hover:bg-primary-200 rounded-md px-5 py-3 transition"
           >← Back to Home</a
         >

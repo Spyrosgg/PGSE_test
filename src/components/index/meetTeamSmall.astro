@@ -1,4 +1,5 @@
 ---
+import { withBase } from "../../lib/url.js";
 import { Image } from "astro:assets";
 import profileA from "../../images/profiles/SpyrosSmall.jpeg";
 import profileB from "../../images/profiles/DiogoSmall.jpeg";
@@ -15,7 +16,7 @@ import { SITE_TITLE_HEADER } from "../../consts";
       Building on 20+ years of engineering expertise. &nbsp;
       <a
         class="inline-flex justify-center text-sm font-semibold text-primary-800 hover:text-primary-400"
-        href="/about"
+        href={withBase("/about")}
       >
         Learn more &nbsp;<span
           aria-hidden="true"
@@ -30,7 +31,7 @@ import { SITE_TITLE_HEADER } from "../../consts";
   >
     <!-- People -->
     <li>
-      <a href="/about#meet-our-team" class="flex items-center gap-x-6">
+      <a href={withBase("/about#meet-our-team")} class="flex items-center gap-x-6">
         <!-- <Image class="h-24 w-24 rounded-full" src={profilePicB} alt="Spyros" /> -->
         <Image
           class="h-24 w-24 rounded-full"
@@ -48,7 +49,7 @@ import { SITE_TITLE_HEADER } from "../../consts";
         </div>
       </a>
       <li>
-        <a href="/about#meet-our-team" class="flex items-center gap-x-6">
+        <a href={withBase("/about#meet-our-team")} class="flex items-center gap-x-6">
           <!-- <Image class="h-24 w-24 rounded-full" src={profilePicA} alt="Spyros" /> -->
           <Image
             class="h-24 w-24 rounded-full"

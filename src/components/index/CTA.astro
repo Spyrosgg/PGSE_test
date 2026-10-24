@@ -1,4 +1,5 @@
 ---
+import { withBase } from "../../lib/url.js";
 import { Image } from "astro:assets";
 import pattern from "../../images/ptrn-triangle.jpeg";
 const { switchOnOff } = Astro.props;
@@ -25,14 +26,14 @@ import { SITE_TITLE_HEADER } from "../../consts";
       <div
         class="mt-10 flex items-center justify-center gap-x-6 lg:justify-start">
         <a
-          href="/contact"
+          href={withBase("/contact")}
           class="rounded-full bg-white px-3.5 py-2.5 text-sm font-semibold
            text-gray-900 shadow-sm hover:bg-gray-100 focus-visible:outline
            focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">
           Get in touch
         </a>
         <a
-          href="/services"
+          href={withBase("/services")}
           class:list={[
             "text-sm font-semibold leading-6 text-white",
             switchOnOff,

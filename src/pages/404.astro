@@ -1,4 +1,5 @@
 ---
+import { withBase } from "../lib/url.js";
 import Layout from "../Layout/BaseLayout.astro";
 import Container from "../components/container.astro";
 import Spacer from "../components/ui/spacer.astro";
@@ -27,11 +28,11 @@ import Spacer from "../components/ui/spacer.astro";
         </p>
         <div class="mt-10 flex items-center justify-center gap-x-6">
           <a
-            href="/"
+            href={withBase("/")}
             class="text-white rounded-full bg-secondary-600 px-3.5 py-2.5 text-sm font-semibold shadow-sm hover:bg-secondary-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary-600"
             >Go back home</a
           >
-          <a href="/contact" class="text-primary-900 text-sm font-semibold"
+          <a href={withBase("/contact")} class="text-primary-900 text-sm font-semibold"
             >Contact us <span aria-hidden="true">&rarr;</span></a
           >
         </div>

@@ -1,4 +1,5 @@
 ---
+import { withBase } from "../lib/url.js";
 import { Image } from "astro:assets";
 import { Icon } from "astro-icon/components";
 
@@ -96,7 +97,7 @@ const SITE_TITLE_UPP = SITE_TITLE_HEADER.toUpperCase();
               </section>
 
               <SpacerHalf />
-              <Btn text="← Go back" link="/about#meet-our-team" />
+              <Btn text="← Go back" link={withBase("/about#meet-our-team")} />
             </div>
 
             <div class="h-auto overflow-hidden shrink-0">

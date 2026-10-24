@@ -1,14 +1,15 @@
 ---
+import { withBase } from "../../lib/url.js";
 import { Icon } from "astro-icon/components";
 import {  SITE_TITLE_HEADER } from "../../consts";
 
 /** Main menu items */
 const navItems = [
-  /* { title: "Why PGSE", url: "/why_pgse/" }, */
-  { title: "About us", url: "/about/" },
-  { title: "Services", url: "/services/" },
-  { title: "Experience", url: "/experience/" },
-  { title: "Contact", url: "/contact/" },
+  /* { title: "Why PGSE", url: withBase("/why_pgse/") }, */
+  { title: "About us", url: withBase("/about/") },
+  { title: "Services", url: withBase("/services/") },
+  { title: "Experience", url: withBase("/experience/") },
+  { title: "Contact", url: withBase("/contact/") },
 ];
 ---
 
@@ -17,10 +18,10 @@ const navItems = [
     class="mx-auto flex items-center justify-between p-4 md:px-12"
     aria-label="Global">
     <!-- Logo -->
-    <a href="/" class="-m-1.5 p-1.5">
+    <a href={withBase("/")} class="-m-1.5 p-1.5">
       <div class="flex items-center">
         {/*LOGO */}
-        <!-- <img class="w-7 h-7 mr-2 transform rotate-45" src="/MdiGrid.svg" alt="logo" /> -->
+        <!-- <img class="w-7 h-7 mr-2 transform rotate-45" src={withBase("/MdiGrid.svg")} alt="logo" /> -->
 
         <div class="flex flex-col lg:flex-1">
           <span class="sr-only">{SITE_TITLE_HEADER}</span>
@@ -87,7 +88,7 @@ const navItems = [
     <div
       class="fixed inset-y-0 right-0 z-20 w-full overflow-y-auto bg-primary-200 px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
       <div class="flex items-center justify-between">
-        <a href="/" class="-m-1.5 p-1.5">
+        <a href={withBase("/")} class="-m-1.5 p-1.5">
           <span class="sr-only">{SITE_TITLE_HEADER}</span>
           <div class="h-6 w-auto text-xl font-semibold">{SITE_TITLE_HEADER}</div>
         </a>

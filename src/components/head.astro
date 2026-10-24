@@ -1,4 +1,5 @@
 ---
+import { withBase } from "../lib/url.js";
 import { SEO } from "astro-seo";
 import { ClientRouter } from "astro:transitions";
 import GoogleAnalytics from "../components/googleAnalytics.astro";
@@ -6,7 +7,7 @@ const title = "PGSE | Structural Engineers";
 const { description } = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
 const resolvedImageWithDomain = new URL(
-  "/opengraph.jpg",
+  withBase("/opengraph.jpg"),
   Astro.site,
 ).toString();
 ---
@@ -17,14 +18,14 @@ const resolvedImageWithDomain = new URL(
 
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width" />
-  <link rel="sitemap" href="/sitemap-0.xml" />
+  <link rel="sitemap" href={withBase("/sitemap-0.xml")} />
   <link rel="shortcut icon" href="#" />
   <meta name="generator" content={Astro.generator} />
 
   {/*Favicon */}
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-  <link rel="manifest" href="/site.webmanifest" />
-  <link rel="icon" href="/favicon.svg?" type="image/svg+xml" />
+  <link rel="apple-touch-icon" sizes="180x180" href={withBase("/apple-touch-icon.png")} />
+  <link rel="manifest" href={withBase("/site.webmanifest")} />
+  <link rel="icon" href={withBase("/favicon.svg?")} type="image/svg+xml" />
 
   {/*Fonts */}
   <!-- <link rel="preconnect" href="https://fonts.googleapis.com" />

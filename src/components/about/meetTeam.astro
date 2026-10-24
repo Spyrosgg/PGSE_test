@@ -1,4 +1,5 @@
 ---
+import { withBase } from "../../lib/url.js";
 import { Image } from "astro:assets";
 import { SITE_TITLE_HEADER } from "../../consts";
 import profileA from "../../images/profiles/SpyrosSmall.jpeg";
@@ -54,7 +55,7 @@ import { Icon } from "astro-icon/components";
         on tight schedules.
         <a
           class="mb-3 flex items-end gap-2 font-semibold text-secondary-600"
-          href="../spyros-gavriilidis">
+          href={withBase("/spyros-gavriilidis/")}>
           Learn more
         </a>
       </p>
@@ -101,7 +102,7 @@ import { Icon } from "astro-icon/components";
       allowing him to deliver quality and efficient designs.
       <a
         class="mb-3 flex items-end gap-2 font-semibold text-secondary-600"
-        href="../diogo-pereira">
+        href={withBase("/diogo-pereira/")}>
         Learn more
       </a>
     </p>

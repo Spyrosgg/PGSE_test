@@ -1,4 +1,5 @@
 ---
+import { withBase } from "../lib/url.js";
 import { Icon } from "astro-icon/components";
 import { Image } from "astro:assets";
 import { SITE_TITLE_HEADER } from "../consts";
@@ -123,7 +124,7 @@ import BtnContactV2 from "../components/ui/btn-contact_v2.astro";
           <div
             class="flex items-end gap-6 pt-2 flex-row sm:flex-col sm:max-lg:items-end sm:max-lg:gap-4 lg:flex-row">
             <BtnContactV1 />
-            <Btn text={"Our Experience\u00A0→"} link="/experience" />
+            <Btn text={"Our Experience\u00A0→"} link={withBase("/experience")} />
           </div>
         </div>
       </div>
@@ -201,7 +202,7 @@ import BtnContactV2 from "../components/ui/btn-contact_v2.astro";
           class="flex items-end gap-6 pt-2 flex-row sm:flex-col sm:max-lg:items-start sm:max-lg:gap-4 lg:flex-row"
         >
           <BtnContact />
-          <Btn text="Our Experience" link="/experience" />
+          <Btn text="Our Experience" link={withBase("/experience")} />
         </div>
       </div> -->
       <!-- </div> -->

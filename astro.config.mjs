@@ -7,7 +7,10 @@ import icon from "astro-icon";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://pgse.co.uk",
+  // The GitHub Pages workflow sets these automatically. With a custom domain
+  // (pgse.co.uk) the base is "/"; on username.github.io/repo it is "/repo".
+  site: process.env.SITE_ORIGIN || "https://pgse.co.uk",
+  base: process.env.BASE_PATH || "/",
   // Astro 7 defaults to "jsx" whitespace handling, which can remove spaces
   // between inline elements. Keep the previous behaviour.
   compressHTML: true,
