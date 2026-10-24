@@ -9,7 +9,7 @@ import Container from "../components/container.astro";
 import Spacer from "../components/ui/spacer.astro";
 import Btn from "../components/ui/btn.astro";
 
-import { SITE_TITLE_HEADER, OFFICIAL_TITLE, TEL_UK, EMAIL } from "../consts";
+import { SITE_TITLE_HEADER, OFFICIAL_TITLE, EMAIL } from "../consts";
 import SpacerHalf from "../components/ui/spacer-half.astro";
 const SITE_TITLE_UPP = SITE_TITLE_HEADER.toUpperCase();
 ---
@@ -115,9 +115,6 @@ const SITE_TITLE_UPP = SITE_TITLE_HEADER.toUpperCase();
                   <a href=`mailto:diogo@pgse.co.uk` class="border-b-2">
                     diogo@{EMAIL}
                   </a>
-                </li>
-                <li class="mt-2">
-                  <a href=`tel:+44${TEL_UK}`>+44 {TEL_UK}</a>
                 </li>
                 <li class="mt-2">
                   <a

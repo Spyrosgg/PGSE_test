@@ -2,8 +2,6 @@ export const SITE_SUB_TITLE = "Structural Engineering";
 export const OFFICIAL_TITLE = "P&G Structural Engineering";
 export const SITE_TITLE_HEADER = "PGSE";
 export const EMAIL = "pgse.co.uk";
-export const TEL_UK = "759 935 6987";
-export const TEL_GR = "698 668 9406";
 
 export const SITE_MAIN_DESCRIPTION =
   "Structural engineering and consultaning services that deliver robust and innovative solutions for your projects.";
