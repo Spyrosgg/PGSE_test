@@ -1,0 +1,17 @@
+---
+import { withBase } from "../../lib/url.js";
+---
+
+<button class="flex flex-col items-end">
+  <span class="relative -left-0.5 top-2 flex h-3 w-3">
+    <span
+      class="absolute inline-flex h-full w-full animate-ping rounded-full bg-secondary-500 opacity-75"
+    ></span>
+    <span class="relative inline-flex h-3 w-3 rounded-full bg-secondary-600"></span>
+  </span>
+  <a
+    class="inline-flex justify-center rounded-full bg-primary-100 ring-primary-300 hover:bg-primary-200 px-4 py-3 text-sm font-semibold text-primary-800 shadow-sm ring-1"
+    href={withBase("/contact")}>
+    Get in touch
+  </a>
+</button>

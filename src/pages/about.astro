@@ -1,0 +1,87 @@
+---
+import { Image } from "astro:assets";
+import ikigai from "../images/IKIGAI.svg";
+import cosmos from "../images/RectangleCircle3.png";
+import cosmosQuarter from "../images/RectangleQuarter.png";
+import Layout from "../Layout/BaseLayout.astro";
+import Container from "../components/container.astro";
+import Spacer from "../components/ui/spacer.astro";
+import SpacerHalf from "../components/ui/spacer-half.astro";
+
+import WhyUs from "../components/about/whyUs.astro";
+import MeetTheTeam from "../components/about/meetTeam.astro";
+
+import { OFFICIAL_TITLE, SITE_TITLE_HEADER } from "../consts";
+import { SITE_MAIN_DESCRIPTION } from "../consts";
+
+const SITE_TITLE_UPP = SITE_TITLE_HEADER.toUpperCase();
+---
+
+<Layout title="About us" description={SITE_MAIN_DESCRIPTION}>
+  <Container>
+    <!-- top layer behind header circle -->
+    <div class="relative flex flex-col items-center">
+      <div
+        class="absolute -top-[58px] h-[58px] md:-top-[42px] md:h-[42px] w-screen bg-primary-100 -z-10">
+      </div>
+    </div>
+
+    <div class="relative flex flex-col items-center">
+      <!-- bg-black section -->
+      <div class="absolute -z-50 bg-primary-900 w-screen h-full"></div>
+
+      <!-- <Spacer /> -->
+
+      <div
+        class="flex flex-col items-end justify-start sm:flex-col-reverse lg:flex-row shrink py-16 sm:py-12 lg:py-24 gap-12 sm:items-center sm:justify-center">
+        <div class="flex flex-col gap-8 max-w-lg">
+          <p class="text-white">
+            <span class="font-Bbold">{OFFICIAL_TITLE}</span> (<span class="font-semibold">{SITE_TITLE_HEADER}</span>), is a dynamic structural engineering consultancy founded by
+            two passionate engineers. Our designs stand on the principles of
+            <span class="font-bold">Stability</span>, <span class="font-bold">Utility</span>, and <span class="font-bold">Elegance</span>. By following
+            these principles, we have earned a robust reputation for
+            consistently delivering innovative solutions that endure the test of
+            time.
+          </p>
+          <p class="text-white -mt-3">
+            By collaborating closely with our clients, we deeply understand
+            their needs and preferences, delivering tailored designs and
+            solutions on time and on budget. We excel at helping our clients
+            unlock the transformative potential of their ideas, bringing their
+            vision to life.
+          </p>
+          <p class="text-white -mt-2">
+            At <span class="font-semibold">{SITE_TITLE_HEADER}</span>, we firmly
+            believe that together, we can shape a brighter future. Our goal is
+            to make a positive impact on the world through the excellence of our
+            work, one project at a time.
+          </p>
+        </div>
+
+        <div class="h-auto">
+          <Image
+            class="max-w-xs object-cover hidden sm:block"
+            src={cosmos}
+            width={400}
+            alt="Cosmos-image"
+            loading="eager"
+          />
+          <div class="sm:hidden h-[120px]"></div>
+          <Image
+            class="sm:hidden max-w-[200px] object-cover block absolute bottom-0 .-mb-16 right-0 -mr-4"
+            src={cosmosQuarter}
+            width={300}
+            alt="Cosmos-image"
+            loading="eager"
+          />
+        </div>
+      </div>
+      <!-- <SpacerHalf /> -->
+    </div>
+    <Spacer />
+    <WhyUs />
+    <Spacer />
+    <MeetTheTeam />
+    <Spacer />
+  </Container>
+</Layout>

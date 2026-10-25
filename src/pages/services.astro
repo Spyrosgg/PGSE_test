@@ -1,0 +1,213 @@
+---
+import { withBase } from "../lib/url.js";
+import { Icon } from "astro-icon/components";
+import { Image } from "astro:assets";
+import { SITE_TITLE_HEADER } from "../consts";
+import { SITE_MAIN_DESCRIPTION } from "../consts";
+import Layout from "../Layout/BaseLayout.astro";
+import Container from "../components/container.astro";
+import CTA from "../components/index/CTA.astro";
+import Spacer from "../components/ui/spacer.astro";
+import SpacerHalf from "../components/ui/spacer-half.astro";
+import ServiceBase from "../components/services/service-base-component.astro";
+import DoubleCheckSvg from "../components/svgs/doubleCheckSvg.astro";
+import Sectors from "../components/index/sectors_services.astro";
+import Btn from "../components/ui/btn.astro";
+import BtnContact from "../components/ui/btn-contact.astro";
+
+import structimg from "../images/ptrn-girders.jpeg";
+import structimgCol from "../images/ptrn-girders-col.jpg";
+import struct from "../images/ECH_site_steel2.jpg";
+import bimimg from "../images/bim-metro.jpeg";
+import consimg from "../images/green-facade.jpeg";
+import circularEco from "../images/logo/CircularEcon.svg";
+import bridgeSide from "../images/bridge-side.jpg";
+import timber from "../images/ceiling-dome.jpg";
+import pageHero from "../images/clad_facade.jpg";
+
+import {
+  servicesEngineeringData,
+  servicesDesignData,
+  servicesConsultancyData,
+} from "../consts";
+import BtnServices from "../components/ui/btn-services.astro";
+import BtnContactV1 from "../components/ui/btn-contact.astro";
+import BtnContactV2 from "../components/ui/btn-contact_v2.astro";
+---
+
+<Layout title="Services" description={SITE_MAIN_DESCRIPTION}>
+  <Container>
+    <!-- Page hero image -->
+    <!-- <div class=" mt-2 overflow-hidden">
+      <Image
+        class="w-full h-96 lg:h-[60vh] object-cover object-bottom rounded-2xl"
+        src={pageHero}
+        width={1080}
+        alt="bird-view"
+      />
+    </div> -->
+
+    <!-- <div   class="mt-12 flex justify-between flex-col md:flex-row gap-6 md:grid-cols-2"> -->
+    <div class="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2">
+      <div>
+        <div class="text-4xl font-semibold whitespace-nowrap">Our Services</div>
+        <p class="max-w-[280px] font-normal">
+          Engineering, design, and consultancy.
+        </p>
+      </div>
+      <div class="">
+        At <span class="font-bold">{SITE_TITLE_HEADER}</span>, we are deeply
+        committed to client-centric and technologically advanced design. We
+        employ cutting-edge digital tools that elevate quality and ensure
+        consistent delivery of excellence. Our experts collaborate seamlessly,
+        infusing enthusiasm into each project. This unique synergy sets us
+        apart, providing you with tailored, cost-effective solutions for
+        projects of any scale or complexity.
+      </div>
+    </div>
+
+    <Spacer />
+    <div class="flex flex-col justify-center">
+      <ServiceBase
+        picture={structimgCol}
+        type="Engineering"
+        alt="engineering-img"
+        reverse={false}
+        servicesItems={servicesEngineeringData}
+      />
+      <SpacerHalf />
+      <ServiceBase
+        picture={bimimg}
+        type="Design"
+        alt="design-img"
+        reverse={true}
+        servicesItems={servicesDesignData}
+      />
+      <SpacerHalf />
+      <ServiceBase
+        picture={consimg}
+        type="Consultancy"
+        alt="consultancy-img"
+        reverse={false}
+        servicesItems={servicesConsultancyData}
+      />
+
+      <Spacer />
+      <div class="flex flex-col justify-between gap-10 sm:flex-row sm:gap-6">
+        <div class="sm:max-w-xl">
+          <p>
+            At <span class="font-bold">{SITE_TITLE_HEADER}</span>, we are driven
+            by the desire to create a lasting, positive impact on local
+            communities through the services we provide.
+          </p>
+
+          <p class="py-2">
+            Our commitment extends beyond functional and efficient design,
+            aiming to achieve environmentally responsible solutions that enhance
+            quality of life and foster economic growth. Our dedication to
+            shaping the built environment ethically and responsibly reflects our
+            commitment to deliver enduring value and preserving our planet for
+            future generations.
+          </p>
+
+          <p>
+            We believe that our work is not just about engineering: it's about
+            making a difference.
+          </p>
+        </div>
+
+        <!-- <p class="pt-4">We believe that our work is not just about engineering:</p> -->
+        <!-- <h2 class="pt-6 text-4xl">it's about making a difference.</h2> -->
+        <div class="">
+          <div class="sm:text-right lg:text-center min-w-[220px] lg:min-w-[270px] text-2xl">Discover the Difference</div>
+          <!-- btns -->
+          <div
+            class="flex items-end gap-6 pt-2 flex-row sm:flex-col sm:max-lg:items-end sm:max-lg:gap-4 lg:flex-row">
+            <BtnContactV1 />
+            <Btn text={"Our Experience\u00A0→"} link={withBase("/experience")} />
+          </div>
+        </div>
+      </div>
+
+      <Spacer />
+      <div class="flex">
+        <h1 class="mb-2 -mt-10 text-2xl">
+          We offer our services in five sectors
+        </h1>
+      </div>
+
+      <Sectors tab="hidden" />
+
+      <Spacer />
+      <!-- <div
+        class="flex flex-col-reverse justify-around gap-10 sm:flex-row sm:gap-6"
+      > -->
+      <div class="flex justify-center md:justify-around gap-4">
+        <div class="">
+          <h3 class="text-xl pb-4">
+            Unlock the potential of your next project!
+          </h3>
+          <p>Our unique blend of skills sets us apart from the competition.</p>
+          <ul class="list-none py-2 pl-4">
+            <li>
+              <div class="flex gap-2">
+                <DoubleCheckSvg /> Expertise and innovation.
+              </div>
+            </li>
+            <li>
+              <div class="flex gap-2">
+                <DoubleCheckSvg /> Tailored solutions to your specific needs.
+              </div>
+            </li>
+            <li>
+              <div class="flex gap-2">
+                <DoubleCheckSvg /> Use of the latest digital tools.
+              </div>
+            </li>
+            <li>
+              <div class="flex gap-2">
+                <DoubleCheckSvg mainColor="text-red-700" /> Compliance with the
+                highest industry standards.
+              </div>
+            </li>
+          </ul>
+          <!-- <p>
+            Let's unlock the potential of your next project! Our unique blend of
+            expertise and innovation sets us apart from the competition. We tailor
+            solutions to your specific needs, use the latest digital tools, and
+            ensure compliance with the highest industry standards and regulations.
+          </p> -->
+          <!-- <p class="pt-4">
+            With a focus on cost-effectiveness and sustainability, we deliver
+            structures that not only meet but exceed expectations. Contact <span
+              class="font-bold">
+              {SITE_TITLE_HEADER}
+            </span> today and let's create something exceptional, together. Your
+            vision, our expertise, a brighter future.
+          </p> -->
+        </div>
+        <!-- <div class="hidden md:flex min-w-[290px]">
+          <Image
+            class="w-full sm:max-w-sm object-cover rounded-2xl"
+            src={timber}
+            height={389}
+            alt="Circular Economy"
+          />
+        </div> -->
+      </div>
+
+      <!-- <div>
+        <div class="min-w-[220px] text-4xl">Discover the Difference</div>
+          <div
+          class="flex items-end gap-6 pt-2 flex-row sm:flex-col sm:max-lg:items-start sm:max-lg:gap-4 lg:flex-row"
+        >
+          <BtnContact />
+          <Btn text="Our Experience" link={withBase("/experience")} />
+        </div>
+      </div> -->
+      <!-- </div> -->
+      <Spacer />
+    </div>
+  </Container>
+  <CTA switchOnOff="hidden" />
+</Layout>

@@ -1,0 +1,87 @@
+---
+const { tab } = Astro.props;
+import { Icon } from "astro-icon/components";
+import {
+  subBuildingsData,
+  subTransportationData,
+  subUtilityData,
+  subTailoredData,
+} from "../../consts";
+---
+
+<div class="relative">
+  <div class="relative mx-auto bg-primary-800 bg-cover">
+    <span
+      class:list={[
+        "relative bottom-6 rounded-t-lg bg-primary-800 px-3 py-1 text-xl font-semibold text-white",
+        tab,
+      ]}>
+      SECTORS
+    </span>
+    <!-- <div class="relative grid gap-4 justify-center sm:grid-cols-2 sm:p-12 "> -->
+    <div class="relative flex flex-wrap gap-8 justify-center p-4 sm:p-8">
+      <!-- sec 1 -->
+      <div
+        class="max-w-xs flex flex-col items-center text-center text-white py-2">
+        <Icon name="ri:building-2-line" class="h-10 w-10" />
+
+        <h2 class="mb-2 font-bold text-xl">Buildings</h2>
+        <p class="text-center">
+          Our expertise span diverse building types, focusing on quality and
+          sustainability, blending aesthetics and functionality.
+        </p>
+        <!-- <ul class="list-none">
+          {
+            subBuildingsData.map(({ sub }) => (
+              <li class="px-2 text-center hover:delay-100 hover:bg-primary-500/20">{sub}</li>
+            ))
+          }
+        </ul> -->
+      </div>
+
+      <!-- sec 2 -->
+      <div
+        class="max-w-xs flex flex-col items-center text-center text-white py-2">
+        <Icon name="ri:arrow-left-right-line" class="h-10 w-10" />
+        <h2 class="mb-2 font-bold text-xl">Transportation</h2>
+        <p class="text-center">
+          We engineer safe, functional, and durable transportation
+          infrastructure, contributing to a smooth travel experience.
+        </p>
+      </div>
+
+      <!-- sec 3 -->
+      <div
+        class="max-w-xs flex flex-col items-center text-center text-white py-2">
+        <Icon name="ri:bank-line" class="h-10 w-10" />
+        <h2 class="mb-2 font-bold text-xl">Existing Structures</h2>
+        <p class="text-center">
+          We transform structures that have stood the test of time, ensuring
+          they match your ever-evolving needs.
+        </p>
+      </div>
+
+      <!-- sec 6 -->
+      <div
+        class="max-w-xs flex flex-col items-center text-center text-white py-2">
+        <Icon name="ri:water-flash-line" class="h-10 w-10" />
+        <h2 class="mb-2 font-bold text-xl">Utility Structures</h2>
+        <p class="text-center">
+          Our structural designs for essential utilities, meet rising demands
+          with innovative and sustainable solutions.
+        </p>
+      </div>
+
+      <!-- sec 5 -->
+      <div
+        class="max-w-xs flex flex-col items-center text-center text-white py-2">
+        <Icon name="ri:pencil-ruler-2-line" class="h-10 w-10" />
+        <span class="mb-2 font-bold text-xl">Tailored</span>
+        <p class="text-center">
+          We offer unique and customised structural solutions, addressing
+          specific challenges and project requirements.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
